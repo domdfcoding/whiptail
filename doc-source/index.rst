@@ -1,13 +1,12 @@
-****************
+===========================
 whiptail
-****************
+===========================
 
 .. start short_desc
 
 **Use whiptail to display dialog boxes from Python scripts.**
 
 .. end short_desc
-
 
 .. start shields 
 
@@ -76,19 +75,45 @@ whiptail
 
 .. end shields
 
-|
-
 Installation
---------------
+---------------
 
 .. start installation
 
-``whiptail`` can be installed from PyPI.
+.. tabs::
 
-To install with ``pip``:
+	.. tab:: from PyPI
 
-.. code-block:: bash
+		.. prompt:: bash
 
-	$ python -m pip install whiptail
+			pip install whiptail
+
+
+	.. tab:: from GitHub
+
+		.. prompt:: bash
+
+			pip install git+https://github.com//whiptail@master
 
 .. end installation
+
+.. toctree::
+	:hidden:
+
+	Home<self>
+
+.. toctree::
+	:maxdepth: 3
+	:caption: Documentation
+
+	API Reference<docs>
+	Source
+	Building
+
+.. start links
+
+View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
+
+`Browse the GitHub Repository <https://github.com/domdfcoding/whiptail>`__
+
+.. end links

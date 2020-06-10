@@ -1,10 +1,6 @@
+include __pkginfo__.py
 include LICENSE
-include *.txt
-include *.rst
-recursive-include docs *
-recursive-include testsuite *
-recursive-exclude docs *.pyc
-recursive-exclude docs *.pyo
-recursive-exclude testsuite *.pyc
-recursive-exclude testsuite *.pyo
-prune docs/_build
+include requirements.txt
+recursive-exclude **/__pycache__ *
+recursive-include whiptail/ *.pyi
+recursive-include whiptail/ py.typed

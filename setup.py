@@ -1,35 +1,32 @@
-import re
-from setuptools import setup
+#!/usr/bin/env python
+# This file is managed by `git_helper`. Don't edit it directly
+"""Setup script"""
 
-readme = open('README.rst').read()
-changes = open('CHANGES.txt').read()
-version_file = 'whiptail.py'
-version = re.findall("__version__ = '(.*)'", open(version_file).read())[0]
-try:
-    version = __import__('utile').git_version(version)
-except ImportError:
-    pass
+# 3rd party
+from setuptools import find_packages, setup
+
+# this package
+from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 setup(
-    name='whiptail',
-    version=version,
-    description="Use whiptail to display dialog boxes from shell scripts",
-    long_description=readme + '\n\n' + changes,
-    keywords='whiptail',
-    author='Marwan Alsabbagh',
-    author_email='marwan.alsabbagh@gmail.com',
-    url='https://github.com/marwano/whiptail',
-    license='BSD',
-    py_modules=['whiptail'],
-    namespace_packages=[],
-    include_package_data=True,
-    classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Console',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-    ],
-)
+		author=author,
+		author_email=author_email,
+		classifiers=classifiers,
+		description=short_desc,
+		entry_points=entry_points,
+		extras_require=extras_require,
+		include_package_data=True,
+		install_requires=install_requires,
+		license=__license__,
+		long_description=long_description,
+		name=pypi_name,
+		packages=find_packages(exclude=("tests", "doc-source")),
+		project_urls=project_urls,
+		py_modules=py_modules,
+		python_requires=">=3.6",
+		url=web,
+		version=__version__,
+		keywords=keywords,
+		zip_safe=False,
+
+		)
