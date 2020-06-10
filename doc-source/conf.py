@@ -51,6 +51,7 @@ extensions = [
 		"sphinx_tabs.tabs",
 		"sphinx-prompt",
 		"sphinx_autodoc_typehints",
+		'sphinx.ext.autosummary',
 		]
 
 sphinxemoji_style = 'twemoji'

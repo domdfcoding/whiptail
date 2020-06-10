@@ -4,7 +4,7 @@ author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.3.0dev"
 username: "domdfcoding"
-license: 'LGPLv3+'
+license: 'BSD'
 short_desc: 'Use whiptail to display dialog boxes from Python scripts.'
 
 #conda_channels:
@@ -46,3 +46,6 @@ extras_require:
     - sphinx
 
 tox_testenv_extras: all
+
+extra_sphinx_extensions:
+  - sphinx.ext.autosummary

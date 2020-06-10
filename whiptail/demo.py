@@ -10,17 +10,17 @@ sys.path.append(".")
 
 w = Whiptail(title="This is the title", backtitle="This is the backtitle")
 
-prompt = w.prompt("Enter some text:")[0]
+prompt = w.inputbox("Enter some text:")[0]
 print(f"You entered: '{prompt}'!")
 
-prompt_default = w.prompt("Enter some text:", "Some Text ;)")[0]
+prompt_default = w.inputbox("Enter some text:", "Some Text ;)")[0]
 print(f"You entered: '{prompt_default}'!")
 
-prompt_password = w.prompt("Enter a (pretend) password:", password=True)[0]
+prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
 
-alert = w.alert("This is an alert!")  # type: ignore
-print(f"Alert doesn't return anything, see: {alert}")
+msgbox = w.msgbox("This is an msgbox!")  # type: ignore
+print(f"msgbox doesn't return anything, see: {msgbox}")
 
 # view_file
 
@@ -38,3 +38,6 @@ print(f"You selected: '{radiolist}'!")
 checklist = w.checklist("Choose Multiple", ["Spam, spam, spam, spam", "Egg", "Chips"])[0]
 checklist_str = "' and '".join(checklist)
 print(f"You selected: '{checklist_str}'!")
+
+textbox = w.textbox(__file__)  # type: ignore
+print(textbox)

@@ -25,19 +25,19 @@ Test Routine
 
 w = Whiptail(title="This is the title", backtitle="This is the backtitle", auto_exit=True)
 
-prompt = w.prompt("Enter some text:")[0]
+prompt = w.inputbox("Enter some text:")[0]
 print(f"You entered: '{prompt}'!")
 assert prompt == "Hello World"
 
-prompt_default = w.prompt("Enter some text:", "Some Text ;)")[0]
+prompt_default = w.inputbox("Enter some text:", "-- Some Text ;)")[0]
 print(f"You entered: '{prompt_default}'!")
 assert prompt_default == "Some Text ;)"
 
-prompt_password = w.prompt("Enter a (pretend) password:", password=True)[0]
+prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
 assert prompt_password == "Password"
 
-alert = w.alert("This is an alert!")  # type: ignore
+alert = w.msgbox("This is an msgbox!")  # type: ignore
 print(f"Alert only returns the 't return anything, see: {alert}")
 
 # view_file

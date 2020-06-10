@@ -8,6 +8,23 @@ whiptail
 
 .. end short_desc
 
+``whiptail`` is a librarty that will let you present a variety of questions or
+display messages using dialog boxes from a Python script.
+
+Currently, these types of dialog boxes are implemented:
+
+* yes/no box
+* menu box
+* input box
+* message box
+* text box
+* info box
+* checklist box
+* radiolist box
+* gauge box
+* password box
+
+
 
 .. start shields 
 

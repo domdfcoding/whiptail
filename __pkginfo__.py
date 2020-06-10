@@ -52,7 +52,7 @@ entry_points = {
 		"console_scripts": []
 		}
 
-__license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
+__license__ = "BSD License"
 
 short_desc = "Use whiptail to display dialog boxes from Python scripts."
 
@@ -86,7 +86,7 @@ classifiers = [
 		'Programming Language :: Python :: 3.7',
 		'Programming Language :: Python :: 3.8',
 		'Programming Language :: Python :: 3 :: Only',
-		'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
+		'License :: OSI Approved :: BSD License',
 
 		]
 

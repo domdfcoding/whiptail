@@ -2,22 +2,22 @@
 API Reference
 ===========================
 
-.. contents:: Table of Contents
-
 .. automodule:: whiptail
-    :members:
-    :private-members:
-    :special-members:
-    :inherited-members:
-    :undoc-members:
+
+.. autosummary::
+
+	whiptail.Response
+	whiptail.Whiptail
+	whiptail.flatten
+
+.. autoclass:: whiptail.Response
+	:members:
+	:undoc-members:
+
+.. autoclass:: whiptail.Whiptail
+	:members:
+	:undoc-members:
+
+.. autofunction:: whiptail.flatten
 
 
-:mod:`whiptail.__init__`
-------------------------------------
-
-.. automodule:: whiptail.__init__
-    :members:
-    :private-members:
-    :special-members:
-    :inherited-members:
-    :undoc-members:
