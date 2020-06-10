@@ -1,12 +1,3 @@
-# stdlib
-import sys
-
-# this package
-from whiptail import Whiptail
-
-sys.path.append("../..")
-sys.path.append("..")
-sys.path.append(".")
 """
 Test Routine
 ---------------
@@ -18,10 +9,20 @@ Test Routine
 #. Highlight ``Option 3`` and press ``Enter``.
 #. Highlight ``Option 2``, ``Tab`` to ``<OK>`` and press ``Enter``.
 #. Highlight ``Chips``, press ``Space``, and press ``Enter``.
-#. Highlight ``Spam, spam, spam, spam``, press ``Space``, 
+#. Highlight ``Spam, spam, spam, spam``, press ``Space``,
 	highlight ``Egg``, press ``Space``, then press ``Enter``.
 
 """
+
+# stdlib
+import sys
+
+# this package
+from whiptail import Whiptail
+
+sys.path.append("../..")
+sys.path.append("..")
+sys.path.append(".")
 
 w = Whiptail(title="This is the title", backtitle="This is the backtitle", auto_exit=True)
 
