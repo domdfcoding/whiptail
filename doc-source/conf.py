@@ -27,7 +27,6 @@ github_url = f"https://github.com/domdfcoding/whiptail"
 rst_prolog = f""".. |pkgname| replace:: whiptail
 .. |pkgname2| replace:: ``whiptail``
 .. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
-.. |ghurl| replace:: {github_url}
 """
 
 author = "Dominic Davis-Foster"

@@ -45,7 +45,7 @@ __copyright__ = """
 __version__ = "0.3.0dev"
 
 modname = "whiptail"
-pypi_name = "whiptail"
+pypi_name = "whiptail-dialogs"
 import_name = "whiptail"
 py_modules = []
 entry_points = {

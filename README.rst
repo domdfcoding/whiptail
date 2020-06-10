@@ -8,24 +8,6 @@ whiptail
 
 .. end short_desc
 
-``whiptail`` is a librarty that will let you present a variety of questions or
-display messages using dialog boxes from a Python script.
-
-Currently, these types of dialog boxes are implemented:
-
-* yes/no box
-* menu box
-* input box
-* message box
-* text box
-* info box
-* checklist box
-* radiolist box
-* gauge box
-* password box
-
-
-
 .. start shields 
 
 .. list-table::
@@ -41,7 +23,7 @@ Currently, these types of dialog boxes are implemented:
 	* - Other
 	  - |license| |language| |commits-since| |commits-latest| |maintained| 
 
-.. |docs| image:: https://readthedocs.org/projects/whiptail/badge/?version=latest
+.. |docs| image:: https://img.shields.io/readthedocs/whiptail/latest?logo=read-the-docs
 	:target: https://whiptail.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 
@@ -53,24 +35,24 @@ Currently, these types of dialog boxes are implemented:
 	:target: https://requires.io/github/domdfcoding/whiptail/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/whiptail
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/whiptail?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/whiptail
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/whiptail.svg
-	:target: https://pypi.org/project/whiptail/
+.. |pypi-version| image:: https://img.shields.io/pypi/v/whiptail-dialogs
+	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/whiptail.svg
-	:target: https://pypi.org/project/whiptail/
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/whiptail-dialogs
+	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/whiptail
-	:target: https://pypi.org/project/whiptail/
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/whiptail-dialogs
+	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/whiptail
-	:target: https://pypi.org/project/whiptail/
+.. |wheel| image:: https://img.shields.io/pypi/wheel/whiptail-dialogs
+	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/whiptail
@@ -93,6 +75,26 @@ Currently, these types of dialog boxes are implemented:
 
 .. end shields
 
+
+``whiptail`` is a librarty that will let you present a variety of questions or
+display messages using dialog boxes from a Python script.
+
+Currently, these types of dialog boxes are implemented:
+
+* yes/no box
+* menu box
+* input box
+* message box
+* text box
+* info box
+* checklist box
+* radiolist box
+* gauge box
+* password box
+
+
+
+
 |
 
 Installation
@@ -106,6 +108,6 @@ To install with ``pip``:
 
 .. code-block:: bash
 
-	$ python -m pip install whiptail
+	$ python -m pip install whiptail-dialogs
 
 .. end installation
