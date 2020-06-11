@@ -23,7 +23,7 @@ __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
 
 __license__ = "BSD"
-__version__ = "0.3.0dev"
+__version__ = "0.3.1dev"
 __email__ = "dominic@davis-foster.co.uk"
 
 # stdlib
