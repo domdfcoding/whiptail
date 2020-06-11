@@ -22,7 +22,7 @@ Use whiptail to display dialog boxes from Python scripts
 __author__ = "Dominic Davis-Foster"
 __copyright__ = "2020 Dominic Davis-Foster"
 
-__license__ = "GNU Lesser General Public License v3 or later (LGPLv3+)"
+__license__ = "BSD"
 __version__ = "0.3.0dev"
 __email__ = "dominic@davis-foster.co.uk"
 

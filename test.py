@@ -10,7 +10,7 @@ Test Routine
 #. Highlight ``Option 2``, ``Tab`` to ``<OK>`` and press ``Enter``.
 #. Highlight ``Chips``, press ``Space``, and press ``Enter``.
 #. Highlight ``Spam, spam, spam, spam``, press ``Space``,
-	highlight ``Egg``, press ``Space``, then press ``Enter``.
+	highlight ``Egg``, press ``Space``, then ``Tab`` to ``<OK>`` and press ``Enter``.
 
 """
 
@@ -34,7 +34,7 @@ assert prompt == "Hello World"
 
 prompt_default = w.inputbox("Enter some text:", "-- Some Text ;)")[0]
 print(f"You entered: '{prompt_default}'!")
-assert prompt_default == "Some Text ;)"
+assert prompt_default == "-- Some Text ;)"
 
 prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
@@ -62,6 +62,7 @@ assert radiolist == ["Chips"]
 checklist = w.checklist("Choose Multiple", ["Spam, spam, spam, spam", "Egg", "Chips"])[0]
 checklist_str = "' and '".join(checklist)
 print(f"You selected: '{checklist_str}'!")
-assert radiolist == ["Spam, spam, spam, spam", "Egg"]
+print(checklist)
+assert checklist == ["Spam, spam, spam, spam", "Egg"]
 
 print("Tests passed successfully!")

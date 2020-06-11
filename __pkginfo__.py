@@ -72,7 +72,7 @@ repo_root = pathlib.Path(__file__).parent
 long_description = (repo_root / "README.rst").read_text().replace("0.3.0dev", __version__) + '\n'
 
 install_requires = (repo_root / "requirements.txt").read_text().split('\n')
-extras_require = {'sphinx': ['sphinx'], 'all': ['sphinx']}
+extras_require = {'all': []}
 
 classifiers = [
 		'Development Status :: 5 - Production/Stable',
@@ -90,4 +90,4 @@ classifiers = [
 
 		]
 
-keywords = "enum documentation"
+keywords = "dialog"

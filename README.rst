@@ -1,12 +1,17 @@
-****************
+====================
 whiptail
-****************
+====================
 
 .. start short_desc
 
 **Use whiptail to display dialog boxes from Python scripts.**
 
 .. end short_desc
+
+.. image:: https://coveralls.io/repos/github/domdfcoding/whiptail/badge.svg?branch=master
+	:target: https://coveralls.io/github/domdfcoding/whiptail?branch=master
+	:alt: Coverage
+
 
 .. start shields 
 
@@ -76,7 +81,7 @@ whiptail
 .. end shields
 
 
-``whiptail`` is a librarty that will let you present a variety of questions or
+``whiptail`` is a library that will let you present a variety of questions or
 display messages using dialog boxes from a Python script.
 
 Currently, these types of dialog boxes are implemented:
@@ -93,10 +98,6 @@ Currently, these types of dialog boxes are implemented:
 * password box
 
 
-
-
-|
-
 Installation
 --------------
 
@@ -111,3 +112,11 @@ To install with ``pip``:
 	$ python -m pip install whiptail-dialogs
 
 .. end installation
+
+You must also have the ``whiptail`` package installed on your system.
+
+On Debian and derivatives this can be installed with:
+
+.. code-block:: bash
+
+	$ apt-get install whiptail
