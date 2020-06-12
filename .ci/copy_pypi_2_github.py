@@ -6,7 +6,7 @@ import sys
 import tempfile
 import urllib.parse
 
-# this package
+# 3rd party
 import github
 import requests
 
