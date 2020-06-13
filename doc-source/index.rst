@@ -114,7 +114,7 @@ Installation
 
 		.. prompt:: bash
 
-			pip install git+https://github.com//whiptail@master
+			pip install git+https://github.com/domdfcoding/whiptail@master
 
 .. end installation
 
