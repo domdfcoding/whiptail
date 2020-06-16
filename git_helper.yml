@@ -40,6 +40,9 @@ classifiers:
 
 keywords:
   - dialog
+  - console
+  - whiptail
+  - utility
 
 additional_ignore:
   - .coveralls.yml

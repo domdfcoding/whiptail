@@ -91,4 +91,4 @@ classifiers = [
 
 		]
 
-keywords = "dialog"
+keywords = "dialog console whiptail utility"
