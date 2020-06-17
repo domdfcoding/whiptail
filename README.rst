@@ -20,7 +20,7 @@ whiptail
 	:widths: 10 90
 
 	* - Docs
-	  - |docs|
+	  - |docs| |docs_check|
 	* - Tests
 	  - |travis| |actions_windows| |actions_macos|
 	    |codefactor|
@@ -34,6 +34,10 @@ whiptail
 .. |docs| image:: https://img.shields.io/readthedocs/whiptail/latest?logo=read-the-docs
 	:target: https://whiptail.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
+	
+.. |docs| image:: [Docs Check](https://github.com/domdfcoding/whiptail/workflows/Docs%20Check/badge.svg
+	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22Docs+Check%22
+	:alt: Docs Check Status
 
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/whiptail/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/whiptail
