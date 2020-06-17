@@ -2,14 +2,14 @@
 Downloading source code
 *******************************
 
-``whiptail`` source code resides on publicly accessible GitHub servers,
-and can be accessed from the following URL: https://github.com/domdfcoding/whiptail
+The ``whiptail`` source code resides on publicly accessible GitHub servers,
+and can be accessed from the following URL: https://github.com/domdfcoding/whiptail"
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/domdfcoding/whiptail
+    $ git clone https://github.com/domdfcoding/whiptail"
     > Cloning into 'whiptail'...
     > remote: Enumerating objects: 47, done.
     > remote: Counting objects: 100% (47/47), done.
