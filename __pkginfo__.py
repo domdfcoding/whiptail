@@ -22,6 +22,7 @@ __all__ = [
 		"py_modules",
 		"entry_points",
 		"__license__",
+		"__author__",
 		"short_desc",
 		"author",
 		"author_email",
