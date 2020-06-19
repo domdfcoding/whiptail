@@ -12,6 +12,6 @@ jobs:
       - name: Install and Build 🔧
         uses: ammaraskar/sphinx-action@master
         with:
-          pre-build-command: python -m pip install tox
+          pre-build-command: apt-get update && apt-get install gcc python3-dev -y && python -m pip install tox
           docs-folder: "doc-source/"
           build-command: "tox -e docs -- "
