@@ -18,13 +18,6 @@ Use whiptail to display dialog boxes from Python scripts
 #     Alastair McKinstry (mckinstry@debian.org)
 #
 
-__author__ = "Dominic Davis-Foster"
-__copyright__ = "2020 Dominic Davis-Foster"
-
-__license__ = "BSD"
-__version__ = "0.3.2dev"
-__email__ = "dominic@davis-foster.co.uk"
-
 # stdlib
 import itertools
 import os
@@ -37,6 +30,13 @@ from typing import AnyStr, Iterable, List, Optional, Sequence, Tuple, Union
 
 # 3rd party
 from domdf_python_tools.terminal import get_terminal_size
+
+__author__: str = "Dominic Davis-Foster"
+__copyright__: str = "2020 Dominic Davis-Foster"
+
+__license__: str = "BSD"
+__version__: str = "0.3.2dev"
+__email__: str = "dominic@davis-foster.co.uk"
 
 # TODO:
 # --default-item string
@@ -71,7 +71,7 @@ from domdf_python_tools.terminal import get_terminal_size
 #     reached on stdin.
 
 
-class Response(namedtuple('__BaseResponse', 'returncode value')):
+class Response(namedtuple("__BaseResponse", "returncode value")):
 	"""
 	Namedtuple to store the returncode and value returned by a whiptail dialog.
 
@@ -166,13 +166,13 @@ class Whiptail:
 				height = height - (height % 5)
 
 		cmd = [
-				'whiptail',
-				'--title',
+				"whiptail",
+				"--title",
 				self.title,
-				'--backtitle',
+				"--backtitle",
 				self.backtitle,
 				*list(extra_args),
-				f'--{control}',
+				f"--{control}",
 				"--",
 				str(msg),
 				str(height),
@@ -184,7 +184,7 @@ class Whiptail:
 		out, err = p.communicate()
 
 		if self.auto_exit and p.returncode in exit_on:
-			print('User cancelled operation.')
+			print("User cancelled operation.")
 			sys.exit(p.returncode)
 
 		return Response(p.returncode, err)
@@ -212,11 +212,11 @@ class Whiptail:
 		:return: The value entered by the user, and the return code
 		"""
 
-		control = 'passwordbox' if password else 'inputbox'
+		control = "passwordbox" if password else "inputbox"
 		returncode, val = self.run(control, msg, extra_values=[default])
 		return val, returncode
 
-	def yesno(self, msg: str, default='yes') -> bool:
+	def yesno(self, msg: str, default: str = "yes") -> bool:  # todo: Literal
 		"""
 		A yes/no dialog box will be displayed.
 		The string specified by ``msg`` is displayed inside the dialog box.
@@ -239,11 +239,11 @@ class Whiptail:
 		"""
 
 		if default.lower() == "no":
-			defaultno = '--defaultno'
+			defaultno = "--defaultno"
 		else:
 			defaultno = ''
 
-		return bool(self.run('yesno', msg, extra_args=[defaultno], exit_on=[255]).returncode)
+		return bool(self.run("yesno", msg, extra_args=[defaultno], exit_on=[255]).returncode)
 
 	def msgbox(self, msg: str) -> None:
 		"""
@@ -258,7 +258,7 @@ class Whiptail:
 		:type msg: str
 		"""
 
-		self.run('msgbox', msg)
+		self.run("msgbox", msg)
 
 	def textbox(self, path: Union[str, pathlib.Path, os.PathLike]) -> int:
 		"""
@@ -278,7 +278,7 @@ class Whiptail:
 		if not isinstance(path, pathlib.Path):
 			path = pathlib.Path(path)
 
-		return self.run('textbox', str(path), extra_args=['--scrolltext']).returncode
+		return self.run("textbox", str(path), extra_args=["--scrolltext"]).returncode
 
 	def calc_height(self, msg: str) -> List[str]:
 		"""
@@ -305,7 +305,7 @@ class Whiptail:
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = ' - ',
+			prefix: str = " - ",
 			) -> Tuple[str, int]:
 		"""
 		As its name suggests, a menu box is a dialog box that can be used to present a
@@ -333,7 +333,7 @@ class Whiptail:
 			parsed_items = [(k, prefix + v) for k, v in items]
 
 		extra = self.calc_height(msg) + flatten(parsed_items)
-		returncode, val = self.run('menu', msg, extra_values=extra)
+		returncode, val = self.run("menu", msg, extra_values=extra)
 		return val, returncode
 
 	def showlist(
@@ -358,7 +358,7 @@ class Whiptail:
 		"""
 
 		if isinstance(items[0], str):
-			parsed_items = [(i, '', 'OFF') for i in items]
+			parsed_items = [(i, '', "OFF") for i in items]
 		else:
 			parsed_items = [(k, prefix + v, s) for k, v, s in items]
 
@@ -370,7 +370,7 @@ class Whiptail:
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = ' - '
+			prefix: str = " - "
 			) -> Tuple[List[str], int]:
 		"""
 		A radiolist box is similar to a menu box.
@@ -386,13 +386,13 @@ class Whiptail:
 		:return: A list of the tags strings that were selected, and the return code
 		"""
 
-		return self.showlist('radiolist', msg, items, prefix)
+		return self.showlist("radiolist", msg, items, prefix)
 
 	def checklist(
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = ' - '
+			prefix: str = " - "
 			) -> Tuple[List[str], int]:
 		"""
 		checklist box is similar to a menu box in that there are multiple entries presented in the form of a menu.
@@ -408,4 +408,4 @@ class Whiptail:
 		:return: A list of the tag strings of those entries that are turned on, and the return code
 		"""
 
-		return self.showlist('checklist', msg, items, prefix)
+		return self.showlist("checklist", msg, items, prefix)

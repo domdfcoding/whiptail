@@ -76,7 +76,7 @@ intersphinx_mapping = {
 		"SciPy": ('https://docs.scipy.org/doc/scipy/reference', None),
 		"matplotlib": ('https://matplotlib.org', None),
 		"h5py": ('https://docs.h5py.org/en/latest/', None),
-		"Sphinx": ('https://www.sphinx-doc.org/en/stable/', None),
+		"Sphinx": ('https://www.sphinx-doc.org/en/master/', None),
 		"Django": ('https://docs.djangoproject.com/en/dev/', 'https://docs.djangoproject.com/en/dev/_objects/'),
 		"sarge": ('https://sarge.readthedocs.io/en/latest/', None),
 		"attrs": ('https://www.attrs.org/en/stable/', None),
