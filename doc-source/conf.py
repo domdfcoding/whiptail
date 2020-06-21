@@ -12,11 +12,6 @@ import warnings
 # 3rd party
 from sphinx.locale import _
 
-# Suppress warnings from sphinx_autodoc_typehints
-# TODO: Remove once the following issues is resolved:
-# https://github.com/agronholm/sphinx-autodoc-typehints/issues/133
-warnings.filterwarnings('ignore', message='sphinx.util.inspect.Signature\(\) is deprecated')
-
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
