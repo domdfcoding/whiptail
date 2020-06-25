@@ -88,7 +88,7 @@ html_show_sourcelink = False  # True will show link to source
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
-		'github_repo': 'whiptail',
+		'github_repo': 'cawdrey',
 		'github_version': 'master',
 		'conf_py_path': '/',
 		}
