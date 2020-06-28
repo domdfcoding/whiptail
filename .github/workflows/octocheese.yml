@@ -1,0 +1,15 @@
+name: "GitHub Releases"
+on:
+  push:
+  schedule:
+   - cron: 0 12 * * 2,4,6
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: domdfcoding/octocheese@master
+        with:
+          pypi_name: "whiptail-dialogs"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

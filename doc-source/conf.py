@@ -7,7 +7,6 @@
 import os
 import re
 import sys
-import warnings
 
 # 3rd party
 from sphinx.locale import _
@@ -95,17 +94,9 @@ html_context = {
 
 htmlhelp_basename = slug
 
-latex_documents = [
-		('index', f'{slug}.tex', project, author, 'manual'),
-		]
-
-man_pages = [
-		('index', slug, project, [author], 1)
-		]
-
-texinfo_documents = [
-		('index', slug, project, author, slug, project, 'Miscellaneous'),
-		]
+latex_documents = [('index', f'{slug}.tex', project, author, 'manual')]
+man_pages = [('index', slug, project, [author], 1)]
+texinfo_documents = [('index', slug, project, author, slug, project, 'Miscellaneous')]
 
 
 # Extensions to theme docs
