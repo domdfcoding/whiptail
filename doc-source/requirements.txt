@@ -1,8 +1,8 @@
 extras_require
-git+https://github.com/ScriptAutomate/sphinx-tabs-expanded.git
 sphinx >=3.0.3
 sphinx-notfound-page
 sphinx-prompt >=1.2.0
+sphinx-tabs >=1.1.13
 sphinx_autodoc_typehints >=1.11.0
 sphinx_rtd_theme
 sphinxcontrib-httpdomain >=1.7.0
