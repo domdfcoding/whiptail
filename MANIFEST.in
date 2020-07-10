@@ -3,4 +3,4 @@ include LICENSE
 include requirements.txt
 recursive-exclude **/__pycache__ *
 recursive-include whiptail/ *.pyi
-recursive-include whiptail/ py.typed
+include whiptail/py.typed

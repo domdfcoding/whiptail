@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
-# This file is managed by `git_helper`. Don't edit it directly
+# This file is managed by `repo_helper`. Don't edit it directly
 
 # stdlib
 import os
@@ -15,7 +14,6 @@ sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
 
 from __pkginfo__ import __version__
-
 
 
 github_url = f"https://github.com/domdfcoding/whiptail"
@@ -47,6 +45,7 @@ extensions = [
 		"sphinx-prompt",
 		"sphinx_autodoc_typehints",
 		"sphinx.ext.autosummary",
+		"autodocsumm",
 		'sphinx.ext.autosummary',
 		]
 

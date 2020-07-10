@@ -1,3 +1,4 @@
+autodocsumm
 extras_require
 sphinx >=3.0.3
 sphinx-notfound-page

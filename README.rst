@@ -13,7 +13,7 @@ whiptail
 	:alt: Coverage
 
 
-.. start shields 
+.. start shields
 
 .. list-table::
 	:stub-columns: 1
@@ -33,7 +33,7 @@ whiptail
 .. |docs| image:: https://img.shields.io/readthedocs/whiptail/latest?logo=read-the-docs
 	:target: https://whiptail.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
-	
+
 .. |docs_check| image:: https://github.com/domdfcoding/whiptail/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
@@ -62,7 +62,7 @@ whiptail
 	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/whiptail-dialogs
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/whiptail-dialogs?logo=python&logoColor=white
 	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Supported Python Versions
 
@@ -75,8 +75,8 @@ whiptail
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/whiptail
-	:alt: License
 	:target: https://github.com/domdfcoding/whiptail/blob/master/LICENSE
+	:alt: License
 
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/whiptail
 	:alt: GitHub top language

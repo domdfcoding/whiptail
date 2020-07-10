@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# This file is managed by `git_helper`. Don't edit it directly
+# This file is managed by `repo_helper`. Don't edit it directly
 """Setup script"""
 
 # 3rd party
@@ -19,6 +19,7 @@ setup(
 		extras_require=extras_require,
 		include_package_data=True,
 		install_requires=install_requires,
+		keywords=keywords,
 		license=__license__,
 		long_description=long_description,
 		name=pypi_name,
@@ -28,7 +29,6 @@ setup(
 		python_requires=">=3.6",
 		url=web,
 		version=__version__,
-		keywords=keywords,
 		zip_safe=False,
 
 		)
