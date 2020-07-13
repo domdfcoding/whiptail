@@ -1,3 +1,4 @@
+---
 name: "Docs Check"
 on:
   - pull_request

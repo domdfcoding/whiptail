@@ -50,7 +50,7 @@ pypi_name = "whiptail-dialogs"
 import_name = "whiptail"
 py_modules = []
 entry_points = {
-		"console_scripts": []
+		"console_scripts": [],
 		}
 
 __license__ = "BSD License"

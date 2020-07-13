@@ -1,0 +1,55 @@
+# This file is managed by `repo_helper`. Don't edit it directly
+---
+
+repos:
+ - repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v2.4.0
+   hooks:
+    - id: check-added-large-files
+    - id: check-byte-order-marker
+    - id: check-case-conflict
+    - id: check-docstring-first
+    - id: check-executables-have-shebangs
+    - id: check-json
+    - id: check-symlinks
+    - id: check-vcs-permalinks
+    - id: check-yaml
+    - id: detect-private-key
+    - id: end-of-file-fixer
+    - id: requirements-txt-fixer
+    - id: trailing-whitespace
+
+ - repo: https://github.com/pre-commit/pygrep-hooks
+   rev: v1.5.1
+   hooks:
+    - id: python-no-eval
+    - id: python-use-type-annotations
+
+ - repo: https://github.com/asottile/pyupgrade
+   rev: v1.5.1
+   hooks:
+    - id: pyupgrade
+      args: [--py36-plus]
+
+ - repo: https://github.com/pre-commit/mirrors-yapf
+   rev: v0.30.0
+   hooks:
+    - id: yapf
+      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup)\.py$
+
+
+ - repo: https://github.com/Lucas-C/pre-commit-hooks
+   rev: v1.1.7
+   hooks:
+    - id: forbid-crlf
+    - id: remove-crlf
+
+# - repo: https://github.com/shellcheck-py/shellcheck-py
+#   rev: v0.7.1.1
+#   hooks:
+#    - id: shellcheck
+
+# - repo: https://github.com/adrienverge/yamllint
+#   rev: v1.23.0
+#   hooks:
+#    - id: yamllint
