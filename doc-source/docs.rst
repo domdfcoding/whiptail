@@ -19,5 +19,3 @@ API Reference
 	:undoc-members:
 
 .. autofunction:: whiptail.flatten
-
-

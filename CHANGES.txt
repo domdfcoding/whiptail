@@ -10,7 +10,7 @@ Changelog
 - Made code pass pyflakes with no errors.
 - Added Makefile for common operations.
 
- 
+
 0.1 (2013-03-29)
 ------------------
 
