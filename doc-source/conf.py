@@ -18,7 +18,7 @@ from __pkginfo__ import __version__
 # User-configurable lines
 # End of user-configurable lines
 
-github_url = f"https://github.com/domdfcoding/whiptail"
+github_url = "https://github.com/domdfcoding/whiptail"
 
 rst_prolog = f""".. |pkgname| replace:: whiptail
 .. |pkgname2| replace:: ``whiptail``
@@ -48,6 +48,7 @@ extensions = [
 		"sphinx_autodoc_typehints",
 		"sphinx.ext.autosummary",
 		"autodocsumm",
+		"sphinx_copybutton",
 		'sphinx.ext.autosummary',
 		]
 
@@ -82,15 +83,14 @@ html_theme_options = {
 		'logo_only': False,
 		}
 html_theme_path = ["../.."]
-# html_logo = "logo/pyms.png"
-html_show_sourcelink = False  # True will show link to source
+html_show_sourcelink = True  # True will show link to source
 
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
 		'github_repo': 'whiptail',
 		'github_version': 'master',
-		'conf_py_path': '/',
+		'conf_py_path': '/doc-source/',
 		}
 
 htmlhelp_basename = slug

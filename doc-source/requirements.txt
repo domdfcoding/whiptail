@@ -1,6 +1,7 @@
 autodocsumm
 extras_require
 sphinx >=3.0.3
+sphinx-copybutton >=0.2.12
 sphinx-notfound-page
 sphinx-prompt >=1.2.0
 sphinx-tabs >=1.1.13

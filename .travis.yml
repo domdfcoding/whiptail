@@ -23,7 +23,7 @@ stages:
   - test
   - deploy_pypi
 
-  - deploy_releases
+
 
 jobs:
   include:
