@@ -1,8 +1,9 @@
-# This file is managed by `repo_helper`. Don't edit it directly
+# This file is managed by 'repo_helper'. Don't edit it directly.
 __pycache__/
 *.py[cod]
 *$py.class
-*.so.Python
+*.so
+.Python
 build/
 develop-eggs/
 dist/

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# This file is managed by `repo_helper`. Don't edit it directly
+# This file is managed by 'repo_helper'. Don't edit it directly.
 
 # stdlib
 import os
@@ -49,11 +49,15 @@ extensions = [
 		"sphinx.ext.autosummary",
 		"autodocsumm",
 		"sphinx_copybutton",
+		"sphinxcontrib.default_values",
+		"sphinxcontrib.toctree_plus",
+		# "sphinx_gitstamp",
 		'sphinx.ext.autosummary',
 		]
 
 sphinxemoji_style = 'twemoji'
-todo_include_todos = bool(os.environ.get("SHOW_TODOS", False))
+todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
+gitstamp_fmt = "%d %b %Y"
 
 templates_path = ['_templates']
 html_static_path = ['_static']

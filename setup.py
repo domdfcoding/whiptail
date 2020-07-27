@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-# This file is managed by `repo_helper`. Don't edit it directly
-"""Setup script"""
+# This file is managed by 'repo_helper'. Don't edit it directly.
 
 # stdlib
 import sys
@@ -8,7 +7,7 @@ import sys
 # 3rd party
 from setuptools import setup
 
-sys.path.append(".")
+sys.path.append('.')
 
 # this package
 from __pkginfo__ import *  # pylint: disable=wildcard-import
@@ -16,6 +15,7 @@ from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 
 setup(
+		description="Use whiptail to display dialog boxes from Python scripts.",
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],

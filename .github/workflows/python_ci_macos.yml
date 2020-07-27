@@ -1,4 +1,4 @@
-# This file is managed by `repo_helper`. Don't edit it directly
+# This file is managed by 'repo_helper'. Don't edit it directly.
 ---
 name: macOS Tests
 
@@ -33,7 +33,7 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade tox tox-gh-actions
+          python -m pip install --upgrade tox tox-gh-actions virtualenv
 
       - name: "Run Tests for Python ${{ matrix.python-version }}"
         run: "python -m tox"
