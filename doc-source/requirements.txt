@@ -7,7 +7,7 @@ sphinx-notfound-page
 sphinx-prompt>=1.2.0
 sphinx-tabs>=1.1.13
 sphinx_autodoc_typehints>=1.11.0
-sphinx_rtd_theme<0.5
+sphinx_rtd_theme<0.6
 sphinxcontrib-httpdomain>=1.7.0
 sphinxemoji>=0.1.6
 toctree_plus>=0.0.1
