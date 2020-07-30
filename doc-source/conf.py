@@ -74,6 +74,7 @@ intersphinx_mapping = {
 		'python': ('https://docs.python.org/3/', None),
 		"NumPy": ('https://numpy.org/doc/stable/', None),
 		"SciPy": ('https://docs.scipy.org/doc/scipy/reference', None),
+		"Pandas": ('https://pandas.pydata.org/docs/', None),
 		"matplotlib": ('https://matplotlib.org', None),
 		"h5py": ('https://docs.h5py.org/en/latest/', None),
 		"Sphinx": ('https://www.sphinx-doc.org/en/master/', None),
@@ -82,7 +83,7 @@ intersphinx_mapping = {
 		"attrs": ('https://www.attrs.org/en/stable/', None),
 		}
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'domdf_sphinx_theme'
 html_theme_options = {
 		'logo_only': False,
 		}
