@@ -44,9 +44,9 @@ modname = "whiptail"
 pypi_name = "whiptail-dialogs"
 import_name = "whiptail"
 __license__ = "BSD License"
-short_desc = "Use whiptail to display dialog boxes from Python scripts."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'Use whiptail to display dialog boxes from Python scripts.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/whiptail"
 repo_root = pathlib.Path(__file__).parent
