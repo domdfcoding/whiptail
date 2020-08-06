@@ -9,7 +9,6 @@ repos:
     - id: check-ast
     - id: check-byte-order-marker
     - id: check-case-conflict
-    - id: check-docstring-first
     - id: check-executables-have-shebangs
     - id: check-json
     - id: check-merge-conflict
@@ -23,9 +22,10 @@ repos:
     - id: mixed-line-ending
 
  - repo: https://github.com/domdfcoding/pre-commit-hooks
-   rev: v0.0.1
+   rev: v0.0.2
    hooks:
     - id: requirements-txt-sorter
+    - id: check-docstring-first
 
  - repo: https://github.com/pre-commit/pygrep-hooks
    rev: v1.5.1

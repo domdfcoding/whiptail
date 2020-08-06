@@ -1,6 +1,6 @@
 include __pkginfo__.py
 include LICENSE
 include requirements.txt
-recursive-exclude **/__pycache__ *
+prune **/__pycache__
 recursive-include whiptail *.pyi
 include whiptail/py.typed
