@@ -105,6 +105,24 @@ man_pages = [('index', slug, project, [author], 1)]
 texinfo_documents = [('index', slug, project, author, slug, project, 'Miscellaneous')]
 
 
+autodoc_default_options = {
+		'members': None,  # Include all members (methods).
+		'special-members': None,
+		"autosummary": None,
+		'exclude-members': ','.join([   # Exclude "standard" methods.
+				"__dict__",
+				"__dir__",
+				"__weakref__",
+				"__module__",
+				"__annotations__",
+				"__orig_bases__",
+				"__parameters__",
+				"__subclasshook__",
+				"__init_subclass__",
+				])
+		}
+
+
 # Extensions to theme docs
 def setup(app):
 	from sphinx.domains.python import PyField
