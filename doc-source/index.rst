@@ -29,70 +29,72 @@ whiptail
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/whiptail/latest?logo=read-the-docs
-	:target: https://whiptail.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+.. |docs| rtfd-shield::
+	:project: whiptail
+	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/whiptail/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| actions-shield::
+	:workflow: Docs Check
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/whiptail/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/whiptail
+.. |travis| travis-shield::
+	:travis-site: com
 	:alt: Travis Build Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/whiptail/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| actions-shield::
+	:workflow: Windows Tests
 	:alt: Windows Tests Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/whiptail/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| actions-shield::
+	:workflow: macOS Tests
 	:alt: macOS Tests Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/whiptail/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/whiptail/requirements/?branch=master
+.. |requires| requires-io-shield::
 	:alt: Requirements Status
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/whiptail?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/whiptail
+.. |codefactor| codefactor-shield::
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/whiptail-dialogs
-	:target: https://pypi.org/project/whiptail-dialogs/
+.. |pypi-version| pypi-shield::
+	:project: whiptail-dialogs
+	:version:
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/whiptail-dialogs?logo=python&logoColor=white
-	:target: https://pypi.org/project/whiptail-dialogs/
+.. |supported-versions| pypi-shield::
+	:project: whiptail-dialogs
+	:py-versions:
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/whiptail-dialogs
-	:target: https://pypi.org/project/whiptail-dialogs/
+.. |supported-implementations| pypi-shield::
+	:project: whiptail-dialogs
+	:implementations:
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/whiptail-dialogs
-	:target: https://pypi.org/project/whiptail-dialogs/
+.. |wheel| pypi-shield::
+	:project: whiptail-dialogs
+	:wheel:
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/whiptail
-	:target: https://github.com/domdfcoding/whiptail/blob/master/LICENSE
+.. |license| github-shield::
+	:license:
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/whiptail
+.. |language| github-shield::
+	:top-language:
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/whiptail/v0.3.2
-	:target: https://github.com/domdfcoding/whiptail/pulse
+.. |commits-since| github-shield::
+	:commits-since: v0.3.2
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/whiptail
-	:target: https://github.com/domdfcoding/whiptail/commit/master
+.. |commits-latest| github-shield::
+	:last-commit:
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| maintained-shield:: 2020
 	:alt: Maintenance
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
+.. |pre_commit| pre-commit-shield::
 	:alt: pre-commit
 
 .. end shields
@@ -119,20 +121,9 @@ Installation
 
 .. start installation
 
-.. tabs::
-
-	.. tab:: from PyPI
-
-		.. prompt:: bash
-
-			python3 -m pip install whiptail-dialogs --user
-
-
-	.. tab:: from GitHub
-
-		.. prompt:: bash
-
-			python3 -m pip install git+https://github.com/domdfcoding/whiptail@master --user
+.. installation:: whiptail-dialogs
+	:pypi:
+	:github:
 
 .. end installation
 

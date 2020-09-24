@@ -22,16 +22,24 @@ repos:
     - id: mixed-line-ending
 
  - repo: https://github.com/domdfcoding/pre-commit-hooks
-   rev: v0.0.2
+   rev: v0.0.4
    hooks:
     - id: requirements-txt-sorter
+      args: [--allow-git]
     - id: check-docstring-first
+      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup|tests/.*)\.py$
+    - id: bind-requirements
+
+ - repo: https://github.com/domdfcoding/flake8-dunder-all
+   rev: v0.0.4
+   hooks:
+    - id: ensure-dunder-all
+      files: ^whiptail/.*\.py$
 
  - repo: https://github.com/pre-commit/pygrep-hooks
    rev: v1.5.1
    hooks:
     - id: python-no-eval
-    - id: python-use-type-annotations
 
  - repo: https://github.com/asottile/pyupgrade
    rev: v1.5.1
@@ -39,31 +47,15 @@ repos:
     - id: pyupgrade
       args: [--py36-plus]
 
- - repo: https://github.com/timothycrosley/isort
-   rev: 5.1.4
-   hooks:
-    - id: isort
-      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup)\.py$
-
- - repo: https://github.com/pre-commit/mirrors-yapf
-   rev: v0.30.0
-   hooks:
-    - id: yapf
-      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup)\.py$
-      args: ["--in-place"]
-
  - repo: https://github.com/Lucas-C/pre-commit-hooks
    rev: v1.1.7
    hooks:
     - id: forbid-crlf
     - id: remove-crlf
 
-# - repo: https://github.com/shellcheck-py/shellcheck-py
-#   rev: v0.7.1.1
-#   hooks:
-#    - id: shellcheck
 
-# - repo: https://github.com/adrienverge/yamllint
-#   rev: v1.23.0
-#   hooks:
-#    - id: yamllint
+ - repo: https://github.com/domdfcoding/yapf-isort
+   rev: v0.3.0
+   hooks:
+    - id: yapf-isort
+      exclude: ^(doc-source/conf|__pkginfo__|make_conda_recipe|setup)\.py$

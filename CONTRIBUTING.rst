@@ -1,8 +1,8 @@
-.. This file based on https://github.com/PyGithub/PyGithub/blob/master/CONTRIBUTING.md
-
 ==============
 Contributing
 ==============
+
+.. This file based on https://github.com/PyGithub/PyGithub/blob/master/CONTRIBUTING.md
 
 ``whiptail`` uses `tox <https://tox.readthedocs.io>`_ to automate testing and packaging, and `pre-commit <https://pre-commit.com>`_ to maintain code quality.
 
