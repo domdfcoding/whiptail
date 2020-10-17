@@ -19,7 +19,7 @@ install:
 
 
 script:
-  - tox
+  - tox -vv
 
 
 stages:
@@ -37,7 +37,6 @@ jobs:
       arch: arm64
     - python: '3.8'
       arch: arm64
-
 
   include:
     - stage: test
