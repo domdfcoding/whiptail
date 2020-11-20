@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``whiptail`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/whiptail"
+and can be accessed from the following URL: https://github.com/domdfcoding/whiptail
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
