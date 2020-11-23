@@ -20,7 +20,7 @@ import sys
 # isort: off
 sys.path.append("../..")
 sys.path.append("..")
-sys.path.append(".")
+sys.path.append('.')
 
 # this package
 from whiptail import Whiptail
