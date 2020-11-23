@@ -149,8 +149,8 @@ On Debian and derivatives this can be installed with:
 	:caption: Documentation
 
 	API Reference<docs>
+	contributing
 	Source
-	Building
 
 .. start links
 

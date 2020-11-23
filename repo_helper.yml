@@ -29,8 +29,6 @@ python_versions:
 
 classifiers:
   - "Development Status :: 5 - Production/Stable"
-#  - "Development Status :: 6 - Mature"
-#  - "Development Status :: 7 - Inactive"
   - 'Intended Audience :: Developers'
   - 'Topic :: Software Development :: Libraries :: Python Modules'
   - 'Environment :: Console'
@@ -47,3 +45,6 @@ additional_ignore:
 
 extra_sphinx_extensions:
   - sphinx.ext.autosummary
+
+sphinx_html_theme: furo
+standalone_contrib_guide: true

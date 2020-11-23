@@ -25,20 +25,20 @@ import pathlib
 import shlex
 import sys
 from collections import namedtuple
+from shutil import get_terminal_size
 from subprocess import PIPE, Popen
 from typing import AnyStr, Iterable, List, Optional, Sequence, Tuple, Union
 
 # 3rd party
-from domdf_python_tools.terminal import get_terminal_size
-
-__all__ = ["Response", "Whiptail", "flatten"]
+from domdf_python_tools.typing import PathLike
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
-
 __license__: str = "BSD"
-__version__: str = "0.3.2dev"
+__version__: str = "0.3.2"
 __email__: str = "dominic@davis-foster.co.uk"
+
+__all__ = ["Response", "Whiptail", "flatten"]
 
 # TODO:
 # --default-item string
@@ -77,18 +77,27 @@ class Response(namedtuple("__BaseResponse", "returncode value")):
 	"""
 	Namedtuple to store the returncode and value returned by a whiptail dialog.
 
-	:param returncode: The returncode
-	:param value: The value returned from the dialog. Values are as follows:
+	:param returncode: The returncode.
+	:param value: The value returned from the dialog.
 
-		* ``0``: The ``Yes`` or ``OK`` button was pressed.
-		* ``1``: The ``No`` or ``Cancel`` button was pressed.
-		* ``255``: The user pressed the ``ESC`` key, or an error occurred.
+	Return values are as follows:
+
+	* ``0``: The ``Yes`` or ``OK`` button was pressed.
+	* ``1``: The ``No`` or ``Cancel`` button was pressed.
+	* ``255``: The user pressed the ``ESC`` key, or an error occurred.
 	"""
 
 	returncode: int
 	value: str
 
 	def __new__(cls, returncode: int, value: AnyStr):
+		"""
+		Create a new instance of :class:`~.Response`.
+
+		:param returncode: The returncode.
+		:param value: The value returned from the dialog.
+		"""
+
 		if isinstance(value, bytes):
 			val = value.decode("UTF-8")
 		else:
@@ -105,13 +114,12 @@ class Whiptail:
 	Display dialog boxes in the terminal from Python scripts.
 
 	:param title: The text to show at the top of the dialog.
-	:type title: str
 	:param backtitle: The text to show on the top left of the background.
-	:type backtitle: str
 	:param height: The height of the dialog. Default is 2-5 characters shorter than the terminal window
+	:no-default height:
 	:param width: The height of the dialog. Default is approx. 10 characters narrower than the terminal window
-	:param auto_exit: Whether to call :func:`sys.exit` if the user selects cancel in a dialog. Default :py:obj:`False`
-	:type auto_exit: bool
+	:no-default width:
+	:param auto_exit: Whether to call :func:`sys.exit` if the user selects cancel in a dialog.
 	"""
 
 	def __init__(
@@ -139,12 +147,10 @@ class Whiptail:
 			) -> Response:
 		"""
 
-		:param control: The name of the control to run. One of ``"yesno"``, ``"msgbox"``, ``"infobox"``,
-			``"inputbox"``, ``"passwordbox"``, ``"textbox"``, ``"menu"``, ``"checklist"``,
-			``"radiolist"`` or ``"gauge"``
-		:type control: str
+		:param control: The name of the control to run. One of ``'yesno'``, ``'msgbox'``, ``'infobox'``,
+			``'inputbox'``, ``'passwordbox'``, ``'textbox'``, ``'menu'``, ``'checklist'``,
+			``'radiolist'`` or ``'gauge'``
 		:param msg: The message to display in the dialog box
-		:type msg: str
 		:param extra_args: A sequence of extra arguments to pass to the control
 		:param extra_values: A sequence of extra values to pass to the control
 		:param exit_on: A sequence of return codes that will cause program execution to stop if
@@ -205,11 +211,8 @@ class Whiptail:
 		them with a default password they cannot see. For these reasons, using "init" is highly discouraged.
 
 		:param msg: The message to display in the dialog box
-		:type msg: str, optional
 		:param default: A default value for the text
-		:type default: str, optional
 		:param password: Whether the text being entered is a password, and should be replaced by ``*``. Default :py:obj:`False`
-		:type password: bool, optional
 
 		:return: The value entered by the user, and the return code
 		"""
@@ -221,23 +224,21 @@ class Whiptail:
 	def yesno(self, msg: str, default: str = "yes") -> bool:  # todo: Literal
 		"""
 		A yes/no dialog box will be displayed.
+
 		The string specified by ``msg`` is displayed inside the dialog box.
 		If this string is too long to be fit in one line, it will be automatically
 		divided into multiple lines at appropriate places.
-		The text string may also contain the newline character ``\n`` to control line breaking explicitly.
+		The text string may also contain the newline character ``\\n`` to control line breaking explicitly.
 
 		This dialog box is useful for asking questions that require the user to answer either yes or no.
 		The dialog box has a ``Yes`` button and a ``No`` button, in which the user can switch between
 		by pressing the ``TAB`` key.
 
 		:param msg: The message to display in the dialog box
-		:type msg: str
 
-		:param default: The default button to select, either ``"yes"`` or ``"no"``. Default ``"yes"``
-		:type default: str, optional.
+		:param default: The default button to select, either ``'yes'`` or ``'no'``.
 
 		:return: :py:obj:`True` if the user selected ``yes``. :py:obj:`False` otherwise.
-		:rtype: bool
 		"""
 
 		if default.lower() == "no":
@@ -249,20 +250,21 @@ class Whiptail:
 
 	def msgbox(self, msg: str) -> None:
 		"""
-		A message box is very similar to a yes/no box. The only difference between a message box
-		and a yes/no box is that a message box has only a single ``OK`` button.
+		A message box is very similar to a yes/no box.
+
+		The only difference between a message box and a yes/no box is that
+		a message box has only a single ``OK`` button.
 
 		You can use this dialog box to display any message you like.
-		After reading the message, the user can press the ENTER key so that whiptail will exit
-		and the calling script can continue its operation.
+		After reading the message the user can press the ENTER key so that whiptail will
+		exit and the calling script can continue its operation.
 
 		:param msg: The message to display in the dialog box
-		:type msg: str
 		"""
 
 		self.run("msgbox", msg)
 
-	def textbox(self, path: Union[str, pathlib.Path, os.PathLike]) -> int:
+	def textbox(self, path: PathLike) -> int:
 		"""
 		A text box lets you display the contents of a text file in a dialog box.
 		It is like a simple text file viewer. The user can move through the file by using
@@ -274,22 +276,17 @@ class Whiptail:
 		:param path: The file to display the contents of
 
 		:return: The return code
-		:rtype: int
 		"""
 
 		if not isinstance(path, pathlib.Path):
 			path = pathlib.Path(path)
 
-		return self.run("textbox", str(path), extra_args=["--scrolltext"]).returncode
+		return self.run("textbox", os.fspath(path), extra_args=["--scrolltext"]).returncode
 
 	def calc_height(self, msg: str) -> List[str]:
 		"""
 
 		:param msg: The message to display in the dialog box
-		:type msg: str
-
-		:return:
-		:rtype:
 		"""
 
 		height_offset = 8 if msg else 7
@@ -320,13 +317,11 @@ class Whiptail:
 		the first letter of the tag as a hot-key. There are menu-height entries displayed
 		in the menu at one time, but the menu will be scrolled if there are more entries than that.
 
-		:param msg: The message to display in the dialog box
-		:type msg: str, optional
-		:param items: A sequence of items to display in the menu
+		:param msg: The message to display in the dialog box.
+		:param items: A sequence of items to display in the menu.
 		:param prefix:
-		:type prefix:  str
 
-		:return: The tag of the selected menu item, and the return code
+		:return: The tag of the selected menu item, and the return code.
 		"""
 
 		if isinstance(items[0], str):
@@ -348,15 +343,12 @@ class Whiptail:
 		"""
 		Helper function to display radio- and check-lists.
 
-		:param control: The name of the control to run. Either ``"checklist"`` or ``"radiolist"``
-		:type control: str
-		:param msg: The message to display in the dialog box
-		:type msg: str
-		:param items: A sequence of items to display in the list
+		:param control: The name of the control to run. Either ``'checklist'`` or ``'radiolist'``.
+		:param msg: The message to display in the dialog box/
+		:param items: A sequence of items to display in the list/
 		:param prefix:
-		:type prefix:  str
 
-		:return: A list of the tags strings that were selected, and the return code
+		:return: A list of the tags strings that were selected, and the return code/
 		"""
 
 		if isinstance(items[0], str):
@@ -376,16 +368,15 @@ class Whiptail:
 			) -> Tuple[List[str], int]:
 		"""
 		A radiolist box is similar to a menu box.
+
 		The only difference is that you can indicate which entry is currently selected,
 		by setting its status to on.
 
-		:param msg: The message to display in the dialog box
-		:type msg: str, optional
-		:param items: A sequence of items to display in the radiolist
+		:param msg: The message to display in the dialog box.
+		:param items: A sequence of items to display in the radiolist.
 		:param prefix:
-		:type prefix:  str
 
-		:return: A list of the tags strings that were selected, and the return code
+		:return: A list of the tags strings that were selected, and the return code.
 		"""
 
 		return self.showlist("radiolist", msg, items, prefix)
@@ -397,15 +388,14 @@ class Whiptail:
 			prefix: str = " - "
 			) -> Tuple[List[str], int]:
 		"""
-		checklist box is similar to a menu box in that there are multiple entries presented in the form of a menu.
+		A checklist box is similar to a menu box in that there are multiple entries presented in the form of a menu.
+
 		You can select and deselect items using the SPACE key.
 		The initial on/off state of each entry is specified by status.
 
 		:param msg: The message to display in the dialog box
-		:type msg: str, optional
 		:param items: A sequence of items to display in the checklist
 		:param prefix:
-		:type prefix:  str
 
 		:return: A list of the tag strings of those entries that are turned on, and the return code
 		"""
