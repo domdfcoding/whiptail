@@ -153,17 +153,17 @@ class Whiptail:
 		:return: The response returned by whiptail
 		"""
 
-		width = self.width
-		height = self.height
+		width: Optional[int] = self.width
+		height: Optional[int] = self.height
 
-		if self.height is None or self.width is None:
+		if height is None or width is None:
 			w, h = get_terminal_size()
 
-			if self.width is None:
+			if width is None:
 				width = w - 10
 				width = width - (width % 10)
 
-			if self.height is None:
+			if height is None:
 				height = h - 2
 				height = height - (height % 5)
 

@@ -1,1 +1,1 @@
-domdf-python-tools
+domdf-python-tools>=1.7.0
