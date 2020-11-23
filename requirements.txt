@@ -1,1 +1,1 @@
-domdf_python_tools
+domdf-python-tools
