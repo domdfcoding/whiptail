@@ -148,7 +148,7 @@ On Debian and derivatives this can be installed with:
 	:maxdepth: 3
 	:caption: Documentation
 
-	API Reference<docs>
+	docs
 	contributing
 	Source
 
