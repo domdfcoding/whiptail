@@ -1,16 +1,12 @@
 modname: whiptail
 pypi_name: whiptail-dialogs
-copyright_years: "2020"
+copyright_years: "2020-2021"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.3.2"
 username: "domdfcoding"
 license: 'BSD'
 short_desc: 'Use whiptail to display dialog boxes from Python scripts.'
-
-#conda_channels:
-#  - domdfcoding
-#  - conda-forge
 
 enable_conda: false
 enable_tests: false
@@ -24,15 +20,12 @@ python_versions:
   - 3.8
   - 3.9
 
-# travis secure password for PyPI
-
 
 classifiers:
   - "Development Status :: 5 - Production/Stable"
   - 'Intended Audience :: Developers'
   - 'Topic :: Software Development :: Libraries :: Python Modules'
   - 'Environment :: Console'
-
 
 keywords:
   - dialog
