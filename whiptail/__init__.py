@@ -2,9 +2,9 @@
 #
 #  __init__.py
 """
-Use whiptail to display dialog boxes from Python scripts
+Use whiptail to display dialog boxes from Python scripts.
 """
-#  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright (c) 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #  Copyright (c) 2013 Marwan Alsabbagh and contributors.
 #  All rights reserved.
 #  Licensed under the BSD License. See LICENSE file for details.
@@ -105,7 +105,7 @@ class Response(namedtuple("__BaseResponse", "returncode value")):
 		return super().__new__(cls, returncode, val)
 
 
-def flatten(data):
+def _flatten(data):
 	return list(itertools.chain.from_iterable(data))
 
 
@@ -146,6 +146,7 @@ class Whiptail:
 			exit_on: Sequence[int] = (1, 255)
 			) -> Response:
 		"""
+		Display a control.
 
 		:param control: The name of the control to run. One of ``'yesno'``, ``'msgbox'``, ``'infobox'``,
 			``'inputbox'``, ``'passwordbox'``, ``'textbox'``, ``'menu'``, ``'checklist'``,
@@ -222,13 +223,13 @@ class Whiptail:
 		return val, returncode
 
 	def yesno(self, msg: str, default: str = "yes") -> bool:  # todo: Literal
-		"""
-		A yes/no dialog box will be displayed.
+		r"""
+		Display a yes/no dialog box.
 
 		The string specified by ``msg`` is displayed inside the dialog box.
 		If this string is too long to be fit in one line, it will be automatically
 		divided into multiple lines at appropriate places.
-		The text string may also contain the newline character ``\\n`` to control line breaking explicitly.
+		The text string may also contain the newline character ``\n`` to control line breaking explicitly.
 
 		This dialog box is useful for asking questions that require the user to answer either yes or no.
 		The dialog box has a ``Yes`` button and a ``No`` button, in which the user can switch between
@@ -285,6 +286,7 @@ class Whiptail:
 
 	def calc_height(self, msg: str) -> List[str]:
 		"""
+		Calculate the height of the dialog box based on the message.
 
 		:param msg: The message to display in the dialog box
 		"""
@@ -322,14 +324,14 @@ class Whiptail:
 		:param prefix:
 
 		:return: The tag of the selected menu item, and the return code.
-		"""
+		"""  # noqa: D400
 
 		if isinstance(items[0], str):
 			parsed_items = [(i, '') for i in items]
 		else:
 			parsed_items = [(k, prefix + v) for k, v in items]
 
-		extra = self.calc_height(msg) + flatten(parsed_items)
+		extra = self.calc_height(msg) + _flatten(parsed_items)
 		returncode, val = self.run("menu", msg, extra_values=extra)
 		return val, returncode
 
@@ -356,7 +358,7 @@ class Whiptail:
 		else:
 			parsed_items = [(k, prefix + v, s) for k, v, s in items]
 
-		extra = self.calc_height(msg) + flatten(parsed_items)
+		extra = self.calc_height(msg) + _flatten(parsed_items)
 		returncode, val = self.run(control, msg, extra_values=extra)
 		return shlex.split(val), returncode
 
