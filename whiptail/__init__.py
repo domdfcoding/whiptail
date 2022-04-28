@@ -35,7 +35,7 @@ from domdf_python_tools.typing import PathLike
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "BSD"
-__version__: str = "0.3.2"
+__version__: str = "0.3.3"
 __email__: str = "dominic@davis-foster.co.uk"
 
 __all__ = ["Response", "Whiptail", "flatten"]
@@ -341,6 +341,7 @@ class Whiptail:
 			msg: str,
 			items: Union[Sequence[str], Sequence[Iterable[str]]],
 			prefix: str,
+			defaults: list
 			) -> Tuple[List[str], int]:
 		"""
 		Helper function to display radio- and check-lists.
@@ -349,12 +350,18 @@ class Whiptail:
 		:param msg: The message to display in the dialog box/
 		:param items: A sequence of items to display in the list/
 		:param prefix:
+		:param defaults: A sequence of boolean values referring to the default status of the related item when items
+						are a list of str
 
 		:return: A list of the tags strings that were selected, and the return code/
 		"""
+		if defaults is None or len(items) != len(defaults):
+			defaults = ['OFF' for _ in items]
+		else:
+			defaults = ['ON' if _ else 'OFF' for _ in defaults]
 
 		if isinstance(items[0], str):
-			parsed_items = [(i, '', "OFF") for i in items]
+			parsed_items = [(i, '', defaults[idx]) for idx, i in enumerate(items)]
 		else:
 			parsed_items = [(k, prefix + v, s) for k, v, s in items]
 
@@ -366,8 +373,9 @@ class Whiptail:
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = " - "
-			) -> Tuple[List[str], int]:
+			prefix: str = " - ",
+			defaults: list = None
+	) -> Tuple[List[str], int]:
 		"""
 		A radiolist box is similar to a menu box.
 
@@ -377,18 +385,21 @@ class Whiptail:
 		:param msg: The message to display in the dialog box.
 		:param items: A sequence of items to display in the radiolist.
 		:param prefix:
+		:param defaults: A sequence of boolean values referring to the default status of the related item when items
+				are a list of str
 
 		:return: A list of the tags strings that were selected, and the return code.
 		"""
 
-		return self.showlist("radiolist", msg, items, prefix)
+		return self.showlist("radiolist", msg, items, prefix, defaults)
 
 	def checklist(
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = " - "
-			) -> Tuple[List[str], int]:
+			prefix: str = " - ",
+			defaults: list = None
+	) -> Tuple[List[str], int]:
 		"""
 		A checklist box is similar to a menu box in that there are multiple entries presented in the form of a menu.
 
@@ -398,8 +409,10 @@ class Whiptail:
 		:param msg: The message to display in the dialog box
 		:param items: A sequence of items to display in the checklist
 		:param prefix:
+		:param defaults: A sequence of boolean values referring to the default status of the related item when items
+				are a list of str
 
 		:return: A list of the tag strings of those entries that are turned on, and the return code
 		"""
 
-		return self.showlist("checklist", msg, items, prefix)
+		return self.showlist("checklist", msg, items, prefix, defaults)
