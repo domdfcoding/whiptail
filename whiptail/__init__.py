@@ -247,7 +247,7 @@ class Whiptail:
 		else:
 			defaultno = ''
 
-		return bool(self.run("yesno", msg, extra_args=[defaultno], exit_on=[255]).returncode)
+		return not bool(self.run("yesno", msg, extra_args=[defaultno], exit_on=[255]).returncode)
 
 	def msgbox(self, msg: str) -> None:
 		"""
