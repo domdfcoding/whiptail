@@ -179,15 +179,24 @@ class Whiptail:
 				"--title",
 				self.title,
 				"--backtitle",
-				self.backtitle,
-				*list(extra_args),
+				self.backtitle
+		]
+
+		if any(extra_args):
+			cmd.append(*list(extra_args))
+
+		cmd.extend(
+			[
 				f"--{control}",
 				"--",
 				str(msg),
 				str(height),
 				str(width),
-				*list(extra_values),
 				]
+		)
+
+		if any(extra_values):
+			cmd.append(*list(extra_values))
 
 		p = Popen(cmd, stderr=PIPE)
 		out, err = p.communicate()
