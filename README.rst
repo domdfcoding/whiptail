@@ -28,7 +28,7 @@ whiptail
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -60,8 +60,8 @@ whiptail
 	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/whiptail/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/whiptail/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/badge.svg
+	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/whiptail?logo=codefactor
@@ -99,16 +99,12 @@ whiptail
 	:target: https://github.com/domdfcoding/whiptail/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/whiptail-dialogs
 	:target: https://pypi.org/project/whiptail-dialogs/
 	:alt: PyPI - Downloads
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/whiptail/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/whiptail/master
-	:alt: pre-commit.ci status
 
 .. end shields
 

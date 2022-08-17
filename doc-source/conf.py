@@ -7,65 +7,34 @@ import os
 import re
 import sys
 
-sys.path.append(os.path.abspath('.'))
-sys.path.append(os.path.abspath(".."))
+# 3rd party
+from sphinx_pyproject import SphinxConfig
 
-# this package
-from __pkginfo__ import __version__
+sys.path.append('.')
 
-github_username = "domdfcoding"
-github_repository = "whiptail"
-github_url = f"https://github.com/{github_username}/{github_repository}"
+config = SphinxConfig(globalns=globals())
+project = config["project"]
+author = config["author"]
+documentation_summary = config.description
+
+github_url = "https://github.com/{github_username}/{github_repository}".format_map(config)
 
 rst_prolog = f""".. |pkgname| replace:: whiptail
 .. |pkgname2| replace:: ``whiptail``
 .. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
 """
 
-author = "Dominic Davis-Foster"
-project = "whiptail"
 slug = re.sub(r'\W+', '-', project.lower())
-release = version = __version__
-copyright = "2020-2021 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
-language = "en"
-package_root = "whiptail"
+release = version = config.version
 
-extensions = [
-		"sphinx_toolbox",
-		"sphinx_toolbox.more_autodoc",
-		"sphinx_toolbox.more_autosummary",
-		"sphinx_toolbox.tweaks.param_dash",
-		"sphinx.ext.intersphinx",
-		"sphinx.ext.mathjax",
-		"sphinxcontrib.httpdomain",
-		"sphinxcontrib.extras_require",
-		"sphinx.ext.todo",
-		"sphinxemoji.sphinxemoji",
-		"notfound.extension",
-		"sphinx_copybutton",
-		"sphinxcontrib.default_values",
-		"sphinxcontrib.toctree_plus",
-		"seed_intersphinx_mapping",
-		"sphinx.ext.autosummary",
-		]
-
-sphinxemoji_style = "twemoji"
-todo_include_todos = bool(os.environ.get("SHOW_TODOS", 0))
-gitstamp_fmt = "%d %b %Y"
-
-templates_path = ["_templates"]
-html_static_path = ["_static"]
-source_suffix = ".rst"
-master_doc = "index"
-suppress_warnings = ["image.nonlocal_uri"]
-pygments_style = "default"
+sphinx_builder = os.environ.get("SPHINX_BUILDER", "html").lower()
+todo_include_todos = int(os.environ.get("SHOW_TODOS", 0)) and sphinx_builder != "latex"
 
 intersphinx_mapping = {
 		"python": ("https://docs.python.org/3/", None),
 		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
 		}
 
-html_theme = "furo"
 html_theme_options = {
 		"light_css_variables": {
 				"toc-title-font-size": "12pt",
@@ -78,8 +47,6 @@ html_theme_options = {
 				"admonition-font-size": "12pt",
 				},
 		}
-html_theme_path = ["../.."]
-html_show_sourcelink = True  # True will show link to source
 
 html_context = {}
 htmlhelp_basename = slug
@@ -88,51 +55,24 @@ latex_documents = [("index", f'{slug}.tex', project, author, "manual")]
 man_pages = [("index", slug, project, [author], 1)]
 texinfo_documents = [("index", slug, project, author, slug, project, "Miscellaneous")]
 
-toctree_plus_types = {
-		"class",
-		"function",
-		"method",
-		"data",
-		"enum",
-		"flag",
-		"confval",
-		"directive",
-		"role",
-		"confval",
-		"protocol",
-		"typeddict",
-		"namedtuple",
-		"exception",
-		}
+toctree_plus_types = set(config["toctree_plus_types"])
 
-add_module_names = False
-hide_none_rtype = True
-all_typevars = True
-overloads_location = "bottom"
-
-
-autodoc_exclude_members = [   # Exclude "standard" methods.
-		"__dict__",
-		"__class__",
-		"__dir__",
-		"__weakref__",
-		"__module__",
-		"__annotations__",
-		"__orig_bases__",
-		"__parameters__",
-		"__subclasshook__",
-		"__init_subclass__",
-		"__attrs_attrs__",
-		"__init__",
-		"__new__",
-		"__getnewargs__",
-		"__abstractmethods__",
-		"__hash__",
-		]
 autodoc_default_options = {
 		"members": None,  # Include all members (methods).
 		"special-members": None,
 		"autosummary": None,
 		"show-inheritance": None,
-		"exclude-members": ','.join(autodoc_exclude_members),
+		"exclude-members": ','.join(config["autodoc_exclude_members"]),
 		}
+
+latex_elements = {
+		"printindex": "\\begin{flushleft}\n\\printindex\n\\end{flushleft}",
+		"tableofcontents": "\\pdfbookmark[0]{\\contentsname}{toc}\\sphinxtableofcontents",
+		}
+
+
+def setup(app):
+	# 3rd party
+	from sphinx_toolbox.latex import better_header_layout
+
+	app.connect("config-inited", lambda app, config: better_header_layout(config))
