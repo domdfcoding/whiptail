@@ -32,6 +32,15 @@ name = "Dominic Davis-Foster"
 email = "dominic@davis-foster.co.uk"
 
 
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Homepage = "https://github.com/domdfcoding/whiptail"
+"Issue Tracker" = "https://github.com/domdfcoding/whiptail/issues"
+"Source Code" = "https://github.com/domdfcoding/whiptail"
+Documentation = "https://whiptail.readthedocs.io/en/latest"
+
 [tool.importcheck]
 
 [tool.setuptools]
@@ -143,15 +152,6 @@ show_error_codes = true
 
 [tool.snippet-fmt]
 directives = [ "code-block",]
-
-[project.license]
-file = "LICENSE"
-
-[project.urls]
-Homepage = "https://github.com/domdfcoding/whiptail"
-"Issue Tracker" = "https://github.com/domdfcoding/whiptail/issues"
-"Source Code" = "https://github.com/domdfcoding/whiptail"
-Documentation = "https://whiptail.readthedocs.io/en/latest"
 
 [tool.dependency-dash."requirements.txt"]
 order = 10
