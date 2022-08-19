@@ -27,13 +27,11 @@ import sys
 from collections import namedtuple
 from shutil import get_terminal_size
 from subprocess import PIPE, Popen
-from typing import TYPE_CHECKING, AnyStr, Iterable, List, Optional, Sequence, Tuple, TypeVar, Union, cast
-
-if TYPE_CHECKING:
-	from typing_extensions import Literal
+from typing import AnyStr, Iterable, List, Optional, Sequence, Tuple, TypeVar, Union, cast
 
 # 3rd party
 from domdf_python_tools.typing import PathLike
+from typing_extensions import Literal
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
@@ -41,7 +39,7 @@ __license__: str = "BSD"
 __version__: str = "0.3.2"
 __email__: str = "dominic@davis-foster.co.uk"
 
-__all__ = ["Response", "Whiptail", "flatten"]
+__all__ = ["Response", "Whiptail"]
 
 # TODO:
 # --default-item string
