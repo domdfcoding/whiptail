@@ -27,7 +27,10 @@ import sys
 from collections import namedtuple
 from shutil import get_terminal_size
 from subprocess import PIPE, Popen
-from typing import AnyStr, Iterable, List, Optional, Sequence, Tuple, Union
+from typing import TYPE_CHECKING, AnyStr, Iterable, List, Optional, Sequence, Tuple, TypeVar, Union, cast
+
+if TYPE_CHECKING:
+	from typing_extensions import Literal
 
 # 3rd party
 from domdf_python_tools.typing import PathLike
@@ -90,6 +93,8 @@ class Response(namedtuple("__BaseResponse", "returncode value")):
 	returncode: int
 	value: str
 
+	__slots__ = ()
+
 	def __new__(cls, returncode: int, value: AnyStr):
 		"""
 		Create a new instance of :class:`~.Response`.
@@ -105,7 +110,10 @@ class Response(namedtuple("__BaseResponse", "returncode value")):
 		return super().__new__(cls, returncode, val)
 
 
-def _flatten(data):
+_T = TypeVar("_T")
+
+
+def _flatten(data: Iterable[Iterable[_T]]) -> List[_T]:
 	return list(itertools.chain.from_iterable(data))
 
 
@@ -327,8 +335,10 @@ class Whiptail:
 		"""  # noqa: D400
 
 		if isinstance(items[0], str):
+			items = cast(Sequence[str], items)
 			parsed_items = [(i, '') for i in items]
 		else:
+			items = cast(Sequence[Iterable[str]], items)
 			parsed_items = [(k, prefix + v) for k, v in items]
 
 		extra = self.calc_height(msg) + _flatten(parsed_items)
@@ -337,7 +347,7 @@ class Whiptail:
 
 	def showlist(
 			self,
-			control,
+			control: "Literal['checklist', 'radiolist']",
 			msg: str,
 			items: Union[Sequence[str], Sequence[Iterable[str]]],
 			prefix: str,
@@ -354,8 +364,10 @@ class Whiptail:
 		"""
 
 		if isinstance(items[0], str):
+			items = cast(Sequence[str], items)
 			parsed_items = [(i, '', "OFF") for i in items]
 		else:
+			items = cast(Sequence[Iterable[str]], items)
 			parsed_items = [(k, prefix + v, s) for k, v, s in items]
 
 		extra = self.calc_height(msg) + _flatten(parsed_items)
