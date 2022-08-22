@@ -31,5 +31,5 @@ lines_between_types = 0
 use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
-known_third_party = [ "domdf_python_tools", "github", "requests",]
+known_third_party = [ "domdf_python_tools", "github", "requests", "typing_extensions",]
 known_first_party = "whiptail"
