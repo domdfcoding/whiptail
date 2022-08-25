@@ -156,14 +156,11 @@ On Debian and derivatives this can be installed with:
 	:hidden:
 
 	Home<self>
-
-.. toctree::
-	:maxdepth: 3
-	:caption: Documentation
-
+	example
 	docs
 	contributing
 	Source
+	license
 
 .. sidebar-links::
 	:caption: Links

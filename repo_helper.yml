@@ -37,7 +37,7 @@ additional_ignore:
   - .coveralls.yml
 
 extra_sphinx_extensions:
-  - sphinx.ext.autosummary
+  - sphinx_toolbox_experimental.download_icon
 
 sphinx_html_theme: furo
 standalone_contrib_guide: true

@@ -1,14 +1,5 @@
-# stdlib
-import sys
-
-# isort: off
-sys.path.append("../..")
-sys.path.append("..")
-sys.path.append('.')
-
 # this package
 from whiptail import Whiptail
-# isort: on
 
 w = Whiptail(title="This is the title", backtitle="This is the backtitle")
 

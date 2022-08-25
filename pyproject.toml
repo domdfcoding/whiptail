@@ -91,7 +91,7 @@ extensions = [
     "sphinx_licenseinfo",
     "seed_intersphinx_mapping",
     "html_section",
-    "sphinx.ext.autosummary",
+    "sphinx_toolbox_experimental.download_icon",
 ]
 sphinxemoji_style = "twemoji"
 gitstamp_fmt = "%d %b %Y"
