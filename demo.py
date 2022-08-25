@@ -21,7 +21,7 @@ print(f"You entered: '{prompt_default}'!")
 prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
 
-msgbox = w.msgbox("This is an msgbox!")  # type: ignore
+msgbox = w.msgbox("This is an msgbox!")  # type: ignore[func-returns-value]
 print(f"msgbox doesn't return anything, see: {msgbox}")
 
 # view_file

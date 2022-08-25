@@ -40,7 +40,7 @@ prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
 assert prompt_password == "Password"
 
-alert = w.msgbox("This is an msgbox!")  # type: ignore
+msgbox = w.msgbox("This is an msgbox!")  # type: ignore[func-returns-value]
 print(f"Alert only returns the 't return anything, see: {alert}")
 
 # view_file
