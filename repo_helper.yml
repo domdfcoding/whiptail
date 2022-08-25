@@ -8,6 +8,7 @@ username: "domdfcoding"
 license: 'BSD'
 short_desc: 'Use whiptail to display dialog boxes from Python scripts.'
 
+use_whey: true
 enable_conda: false
 enable_tests: false
 

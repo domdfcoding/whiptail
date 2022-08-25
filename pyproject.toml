@@ -1,31 +1,14 @@
 [build-system]
-requires = [ "setuptools!=61.*,>=40.6.0", "wheel>=0.34.2",]
-build-backend = "setuptools.build_meta"
+requires = [ "whey",]
+build-backend = "whey"
 
 [project]
 name = "whiptail-dialogs"
 version = "0.3.2"
 description = "Use whiptail to display dialog boxes from Python scripts."
 readme = "README.rst"
-requires-python = ">=3.6.1"
 keywords = [ "console", "dialog", "utility", "whiptail",]
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Console",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: BSD License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Typing :: Typed",
-]
-dynamic = [ "dependencies",]
+dynamic = [ "requires-python", "classifiers", "dependencies",]
 
 [[project.authors]]
 name = "Dominic Davis-Foster"

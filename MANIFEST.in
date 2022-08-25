@@ -1,5 +1,0 @@
-include LICENSE
-include requirements.txt
-prune **/__pycache__
-recursive-include whiptail *.pyi
-include whiptail/py.typed
