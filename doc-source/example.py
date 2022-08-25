@@ -15,13 +15,12 @@ print(f"Your password is: '{prompt_password}'!")
 msgbox = w.msgbox("This is an msgbox!")  # type: ignore
 print(f"msgbox doesn't return anything, see: {msgbox}")
 
-# view_file
-
 menu = w.menu("This is a menu.", ["Option 1", "Option 2", "Option 3", "Option 4"])[0]
 print(f"You selected '{menu}'")
 
 menu_descriptions = w.menu(
-		"This is a menu with descriptions.", [("Option 1", "Does Something"), ("Option 2", "Does Something Else")]
+		"This is a menu with descriptions.",
+		[("Option 1", "Does Something"), ("Option 2", "Does Something Else")],
 		)[0]
 print(f"You selected '{menu_descriptions}'")
 
