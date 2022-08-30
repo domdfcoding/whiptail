@@ -297,7 +297,7 @@ class Whiptail:
 		:param msg: The message to display in the dialog box
 		"""
 
-		height_offset = 8 if msg else 7
+		height_offset = 9 if msg else 7
 
 		if self.height is None:
 			width, height = get_terminal_size()
