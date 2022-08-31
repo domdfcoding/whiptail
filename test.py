@@ -42,7 +42,7 @@ prompt_password = w.inputbox(
 print(f"Your password is: '{prompt_password}'!")
 assert prompt_password == "Password"
 
-msgbox = w.msgbox("This is an msgbox! \n This is a new line!")  # type: ignore[func-returns-value]
+msgbox = w.msgbox("This is a msgbox! \n This is a new line!")  # type: ignore[func-returns-value]
 print(f"msgbox doesn't return anything, see: {msgbox}")
 
 # view_file

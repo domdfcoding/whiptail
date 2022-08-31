@@ -12,7 +12,7 @@ print(f"You entered: '{prompt_default}'!")
 prompt_password = w.inputbox("Enter a (pretend) password:", password=True)[0]
 print(f"Your password is: '{prompt_password}'!")
 
-msgbox = w.msgbox("This is an msgbox!")  # type: ignore
+msgbox = w.msgbox("This is a msgbox!")  # type: ignore
 print(f"msgbox doesn't return anything, see: {msgbox}")
 
 menu = w.menu("This is a menu.", ["Option 1", "Option 2", "Option 3", "Option 4"])[0]
