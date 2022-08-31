@@ -60,8 +60,8 @@ whiptail
 	:target: https://github.com/domdfcoding/whiptail/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/whiptail/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/whiptail/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/whiptail?logo=codefactor

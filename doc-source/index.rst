@@ -62,8 +62,8 @@ whiptail
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/badge.svg
-		:target: https://dependency-dash.herokuapp.com/github/domdfcoding/whiptail/
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/whiptail/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/whiptail/
 		:alt: Requirements Status
 
 	.. |codefactor| codefactor-shield::
