@@ -297,7 +297,8 @@ class Whiptail:
 		:param msg: The message to display in the dialog box
 		"""
 
-		height_offset = 9 if msg else 7
+		height_offset = 19 if msg else 7
+		# the first value was originally 8 and didn't allow new lines. Each number increases allowed new lines by 1. TODO: make this more dynamic.
 
 		if self.height is None:
 			width, height = get_terminal_size()
