@@ -306,7 +306,7 @@ class Whiptail:
 		else:
 			height = self.height
 
-		return [str(height - height_offset)]
+		return [str(max(0, height - height_offset))]
 
 	def menu(
 			self,
