@@ -25,6 +25,7 @@ Homepage = "https://github.com/domdfcoding/whiptail"
 Documentation = "https://whiptail.readthedocs.io/en/latest"
 
 [tool.importcheck]
+always = [ "whiptail",]
 
 [tool.setuptools]
 zip-safe = false
@@ -39,7 +40,7 @@ base-classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Typing :: Typed",
 ]
-python-versions = [ "3.6", "3.7", "3.8", "3.9",]
+python-versions = [ "3.6", "3.7", "3.8", "3.9", "3.10", "3.11", "3.12",]
 python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "BSD-3-Clause"
