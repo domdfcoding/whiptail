@@ -10,13 +10,12 @@ readme = "README.rst"
 keywords = [ "console", "dialog", "utility", "whiptail",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 
+[project.license]
+file = "LICENSE"
+
 [[project.authors]]
 name = "Dominic Davis-Foster"
 email = "dominic@davis-foster.co.uk"
-
-
-[project.license]
-file = "LICENSE"
 
 [project.urls]
 Homepage = "https://github.com/domdfcoding/whiptail"
@@ -135,13 +134,6 @@ show_error_codes = true
 [tool.snippet-fmt]
 directives = [ "code-block",]
 
-[tool.dependency-dash."requirements.txt"]
-order = 10
-
-[tool.dependency-dash."doc-source/requirements.txt"]
-order = 30
-include = false
-
 [tool.snippet-fmt.languages.python]
 reformat = true
 
@@ -151,3 +143,10 @@ reformat = true
 [tool.snippet-fmt.languages.ini]
 
 [tool.snippet-fmt.languages.json]
+
+[tool.dependency-dash."requirements.txt"]
+order = 10
+
+[tool.dependency-dash."doc-source/requirements.txt"]
+order = 30
+include = false
