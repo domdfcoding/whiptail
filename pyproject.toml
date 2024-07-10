@@ -26,11 +26,6 @@ Documentation = "https://whiptail.readthedocs.io/en/latest"
 [tool.importcheck]
 always = [ "whiptail",]
 
-[tool.setuptools]
-zip-safe = false
-include-package-data = true
-platforms = [ "Windows", "macOS", "Linux",]
-
 [tool.whey]
 base-classifiers = [
     "Development Status :: 5 - Production/Stable",
