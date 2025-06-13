@@ -248,12 +248,14 @@ class Whiptail:
 		:return: :py:obj:`True` if the user selected ``yes``. :py:obj:`False` otherwise.
 		"""
 
+		# Ensure extra argument is not added unless needed
+		# When whiptail receives extra empty args it returns 255
+		extra_args = []
 		if default.lower() == "no":
-			defaultno = "--defaultno"
-		else:
-			defaultno = ''
+			extra_args.append("--defaultno")
 
-		return bool(self.run("yesno", msg, extra_args=[defaultno], exit_on=[255]).returncode)
+		# whiptail returns 0 for yes, 1 for no and bool translates this as 0=false, 1=true so invert the bool to match the docs above
+		return not bool(self.run("yesno", msg, extra_args=extra_args, exit_on=[255]).returncode)
 
 	def msgbox(self, msg: str) -> None:
 		"""
