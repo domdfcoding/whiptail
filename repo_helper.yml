@@ -3,7 +3,7 @@ pypi_name: whiptail-dialogs
 copyright_years: "2020-2021"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
-version: "0.4.0"
+version: "0.4.1"
 username: "domdfcoding"
 license: 'BSD'
 short_desc: 'Use whiptail to display dialog boxes from Python scripts.'
