@@ -1,11 +1,13 @@
 git+https://github.com/sphinx-toolbox/sphinx-toolbox-experimental.git
 default-values>=0.6.0
+docutils<0.22
 extras-require>=0.5.0
 furo==2021.06.18b36
 html-section>=0.3.0
 mypy>=0.782
 pyyaml>=5.3.1
 repo-helper-sphinx-theme>=0.0.2
+roman>=4.0
 seed-intersphinx-mapping>=1.2.2
 sphinx>=3.0.3
 sphinx-copybutton>=0.2.12

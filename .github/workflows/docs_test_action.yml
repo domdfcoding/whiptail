@@ -20,7 +20,7 @@ jobs:
         uses: "actions/checkout@v4"
 
       - name: Install and Build 🔧
-        uses: sphinx-toolbox/sphinx-action@sphinx-3.3.1
+        uses: sphinx-toolbox/sphinx-action@sphinx-3.3.1-py39
 
         with:
           pre-build-command: python -m pip install tox
