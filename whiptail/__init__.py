@@ -149,7 +149,7 @@ class Whiptail:
 			msg: str,
 			extra_args: Sequence[str] = (),
 			extra_values: Sequence[str] = (),
-			exit_on: Sequence[int] = (1, 255)
+			exit_on: Sequence[int] = (1, 255),
 			) -> Response:
 		"""
 		Display a control.
@@ -378,7 +378,7 @@ class Whiptail:
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = " - "
+			prefix: str = " - ",
 			) -> Tuple[List[str], int]:
 		"""
 		A radiolist box is similar to a menu box.
@@ -399,7 +399,7 @@ class Whiptail:
 			self,
 			msg: str = '',
 			items: Union[Sequence[str], Sequence[Iterable[str]]] = (),
-			prefix: str = " - "
+			prefix: str = " - ",
 			) -> Tuple[List[str], int]:
 		"""
 		A checklist box is similar to a menu box in that there are multiple entries presented in the form of a menu.
