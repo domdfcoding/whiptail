@@ -99,11 +99,11 @@ whiptail
 	:target: https://github.com/domdfcoding/whiptail/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2025
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/whiptail-dialogs
-	:target: https://pypi.org/project/whiptail-dialogs/
+	:target: https://pypistats.org/packages/whiptail-dialogs
 	:alt: PyPI - Downloads
 
 .. end shields

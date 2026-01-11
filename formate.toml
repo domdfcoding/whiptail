@@ -12,6 +12,12 @@ priority = 30
 [hooks.yapf.kwargs]
 yapf_style = ".style.yapf"
 
+[hooks.trailing_commas]
+priority = 21
+
+[hooks.trailing_commas.kwargs]
+format_ImportFrom = false
+
 [hooks.isort]
 priority = 50
 
@@ -27,7 +33,6 @@ lines_between_types = 0
 use_parentheses = true
 remove_redundant_aliases = true
 default_section = "THIRDPARTY"
-known_third_party = [ "domdf_python_tools", "typing_extensions",]
 known_first_party = [ "whiptail",]
 
 [config]
