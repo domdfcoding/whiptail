@@ -137,8 +137,9 @@ Installation
 
 .. start installation
 
-.. installation:: whiptail-dialogs
+.. installation:: whiptail
 	:pypi:
+	:pypi-name: whiptail-dialogs
 	:github:
 
 .. end installation
