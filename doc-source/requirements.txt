@@ -9,6 +9,7 @@ pyyaml>=5.3.1
 repo-helper-sphinx-theme>=0.0.2
 roman>=4.0
 seed-intersphinx-mapping>=1.2.2
+setuptools<81
 sphinx>=3.0.3
 sphinx-copybutton>=0.2.12
 sphinx-debuginfo>=0.2.2
